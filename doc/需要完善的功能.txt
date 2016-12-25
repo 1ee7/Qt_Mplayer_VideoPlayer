@@ -1,0 +1,27 @@
+
+
+
+4. 全屏跟快捷键功能的使用
+5. 鼠标移开画面5秒无操作后,自动隐藏周边的dockwidget
+
+//===================已完成=================
+1. 播放列表的播放完一个后,自动播放下一个
+6. 拖动进度条会快进或后退(需要优化)
+2. 保存播放列表以及加载播放列表
+3. 日志widget实现黑底绿色字体//（QItemDelegate）//
+     |
+        ->pLogList->setStyleSheet("color:green;background-color:black;");
+
+//==============问题
+1. 在播放列表下空白处右键删除列表会闪退
+2. Qmap 如何通过value值查找关键字
+3. QlistWidget 如何删除所有items
+ 
+
+//==============
+1. 隐藏dockwidget标题栏
+    QWidget* lTitleBar = this->titleBarWidget();
+    QWidget* lEmptyWidget = new QWidget();
+    this->setTitleBarWidget(lEmptyWidget);
+    delete lTitleBar;
+

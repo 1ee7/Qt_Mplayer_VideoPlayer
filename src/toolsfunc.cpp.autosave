@@ -1,0 +1,23 @@
+#include "toolsfunc.h"
+#include <QTime>
+#include "qdebug.h"
+ToolsFunc::ToolsFunc()
+{
+}
+
+QString  ToolsFunc::Size2Unit(QString  mstr)
+{
+        float val = mstr.toFloat();
+//        if(val < 60.0)                 return mstr;
+//        else if (val < 3600.0) { int  mval= (int)val/(float)60.0 ;int sval = (int) val%60;
+//               return QString::number(mval)+":"+QString::number(sval); }
+//         else {
+//               int  hvar = (int)val/3600; int val=(int)val%3600; int mval=(int)val/60; int sval=(int)val%60;
+//               return QString::number(hvar)+":"+QString::number(mval)+":"+QString::number(sval);
+//        }
+
+        QTime n(0, 0, 0);                // n == 14:00:00
+        QTime t;
+        t = n.addSecs(int(val));                // t == 14:01:10
+        return t.toString("hh:mm:ss");
+}
